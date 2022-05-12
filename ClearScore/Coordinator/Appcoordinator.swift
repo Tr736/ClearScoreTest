@@ -9,6 +9,7 @@ struct AppCoordinator: Coordinator {
 
     func start() {
         let viewController = DashboardViewController()
-        navigationController.pushViewController(viewController, animated: false)
+        navigationController.pushViewController(viewController,
+                                                animated: false)
     }
 }
