@@ -7,5 +7,11 @@ final class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepareViewController()
+    }
+
+    private func prepareViewController() {
+        title = NSLocalizedString("Dashboard",
+                                  comment: "Dashboard Navigation Bar title")
     }
 }
