@@ -1,6 +1,21 @@
 import UIKit
 
 final class DashboardViewController: UIViewController {
+    private enum Constants {
+        static let navigationBarAccessibilityLabel = "DashboardNavViewController"
+    }
+
+    private var viewModel: DashboardViewModel
+
+    init(viewModel: DashboardViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func loadView() {
         self.view = DashboardView()
     }
@@ -11,7 +26,7 @@ final class DashboardViewController: UIViewController {
     }
 
     private func prepareViewController() {
-        title = NSLocalizedString("Dashboard",
-                                  comment: "Dashboard Navigation Bar title")
+        navigationController?.navigationBar.accessibilityLabel = Constants.navigationBarAccessibilityLabel
+        title = LocalizedConstants.dashboardTitle
     }
 }

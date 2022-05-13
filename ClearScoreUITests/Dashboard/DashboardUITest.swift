@@ -14,7 +14,7 @@ class DashboardUITest: ClearScoreTestCase {
     func test_dashboard_journey() {
         launch()
         XCTAssertTrue(Dashboard.screen.wait())
-        XCTAssertTrue(Dashboard.navigationBar.title == NSLocalizedString("Dashboard", comment: ""))
+        XCTAssertTrue(Dashboard.navigationBarTitleIsDashboard.wait())
     }
 
 }

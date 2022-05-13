@@ -18,6 +18,7 @@ final class DashboardView: UIView {
     }
 
     private func prepareView() {
+        backgroundColor = .white
         accessibilityLabel = Constants.accessibilityLabel
         prepareTitleLabel()
     }

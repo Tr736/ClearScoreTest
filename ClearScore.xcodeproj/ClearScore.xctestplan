@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "8C05120E-9187-4CC5-BBB7-1F6558A842D6",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ClearScore.xcodeproj",
+      "identifier" : "78E97535282D97820078EFD2",
+      "name" : "ClearScore"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ClearScore.xcodeproj",
+        "identifier" : "78E9754B282D97870078EFD2",
+        "name" : "ClearScoreTests"
+      }
+    },
+    {
+      "skippedTests" : [
+        "ClearScoreTestCase"
+      ],
+      "target" : {
+        "containerPath" : "container:ClearScore.xcodeproj",
+        "identifier" : "78E97555282D97870078EFD2",
+        "name" : "ClearScoreUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -15,7 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        appCoordinator = AppCoordinator(navigationController: navigationController)
+        let api = ConcreteAPI(urlSession: URLSession.shared)
+        appCoordinator = AppCoordinator(navigationController: navigationController,
+                                    api: api)
         appCoordinator?.start()
     }
 
