@@ -59,6 +59,7 @@
 		78E97878282FF0D10078EFD2 /* Score+DashboardAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97877282FF0D10078EFD2 /* Score+DashboardAPIResponse.swift */; };
 		78E9787D282FF2E10078EFD2 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9787C282FF2E10078EFD2 /* Score.swift */; };
 		78E97881283004370078EFD2 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97880283004370078EFD2 /* UIImage+Extensions.swift */; };
+		78E9788A28303EAD0078EFD2 /* ScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9788928303EAD0078EFD2 /* ScoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		78E97877282FF0D10078EFD2 /* Score+DashboardAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Score+DashboardAPIResponse.swift"; sourceTree = "<group>"; };
 		78E9787C282FF2E10078EFD2 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		78E97880283004370078EFD2 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		78E9788928303EAD0078EFD2 /* ScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,10 +194,9 @@
 		78E9754F282D97870078EFD2 /* ClearScoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				78E9783F282DB7D30078EFD2 /* Dashboard */,
-				78E97855282EADFD0078EFD2 /* Helpers */,
-				78E97831282DB15B0078EFD2 /* Mocks */,
-				78E97861282ED4310078EFD2 /* Networking */,
+				78E9788628303E830078EFD2 /* UIComponents */,
+				78E978842830367E0078EFD2 /* FeatureSupport */,
+				78E97882283036480078EFD2 /* Main */,
 			);
 			path = ClearScoreTests;
 			sourceTree = "<group>";
@@ -408,7 +409,6 @@
 			isa = PBXGroup;
 			children = (
 				78E97862282ED45A0078EFD2 /* APIRequestEmptyObject.swift */,
-				78E9785F282EBBC00078EFD2 /* ConcreteAPITests.swift */,
 				78E97866282ED48A0078EFD2 /* GetRequest.swift */,
 				78E97868282ED4AE0078EFD2 /* GetRequestWithObject.swift */,
 				78E97864282ED4750078EFD2 /* TestResponseObject.swift */,
@@ -518,6 +518,65 @@
 				78E9756D282D982F0078EFD2 /* Dashboard */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		78E97882283036480078EFD2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				78E97885283037510078EFD2 /* Features */,
+				78E97855282EADFD0078EFD2 /* Helpers */,
+				78E97883283036670078EFD2 /* Networking */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		78E97883283036670078EFD2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				78E9785F282EBBC00078EFD2 /* ConcreteAPITests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		78E978842830367E0078EFD2 /* FeatureSupport */ = {
+			isa = PBXGroup;
+			children = (
+				78E97831282DB15B0078EFD2 /* Mocks */,
+				78E97861282ED4310078EFD2 /* Networking */,
+			);
+			path = FeatureSupport;
+			sourceTree = "<group>";
+		};
+		78E97885283037510078EFD2 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				78E9783F282DB7D30078EFD2 /* Dashboard */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		78E9788628303E830078EFD2 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				78E9788728303E950078EFD2 /* Atoms */,
+				78E9788828303E9A0078EFD2 /* Molecules */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		78E9788728303E950078EFD2 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		78E9788828303E9A0078EFD2 /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				78E9788928303EAD0078EFD2 /* ScoreTests.swift */,
+			);
+			path = Molecules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -693,6 +752,7 @@
 				78E9784D282E44E90078EFD2 /* MockAPIResponse.swift in Sources */,
 				78E97857282EAE160078EFD2 /* AppContextTest.swift in Sources */,
 				78E97850282E47840078EFD2 /* DashboardViewModelTests.swift in Sources */,
+				78E9788A28303EAD0078EFD2 /* ScoreTests.swift in Sources */,
 				78E97867282ED48A0078EFD2 /* GetRequest.swift in Sources */,
 				78E97860282EBBC00078EFD2 /* ConcreteAPITests.swift in Sources */,
 				78E97869282ED4AE0078EFD2 /* GetRequestWithObject.swift in Sources */,

@@ -70,6 +70,14 @@ class DashboardViewModelTests: XCTestCase {
             }
         }.store(in: &cancellable)
 
+        sut.$score.sink { score in
+            if let score = score {
+                XCTAssertEqual(Int(score.max), Constants.maxScoreValue)
+                XCTAssertEqual(Int(score.min), Constants.minScoreValue)
+                XCTAssertEqual(Int(score.actual), Constants.score)
+            }
+        }.store(in: &cancellable)
+
         waitForExpectations(timeout: Constants.timeout)
         XCTAssertNotNil(sut.data)
 

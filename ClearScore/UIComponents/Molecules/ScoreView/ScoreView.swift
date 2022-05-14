@@ -4,12 +4,18 @@ final class ScoreView: UIView {
     private enum Constants {
         static let padding: CGFloat = 36
         static let spacing: CGFloat = 8
+        static let accessibilityLabel = "scoreView"
+        static let blurViewAccessibilityLabel = "blurView"
+        static let titleLabelAccessibilityLabel = "titleLabel"
+        static let subtitleLabelAccessibilityLabel = "subtitleLabel"
+        static let scoreLabelAccessibilityLabel = "scoreLabel"
     }
 
     private lazy var blurView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.translatesAutoresizingMaskIntoConstraints = false
+        blurEffectView.accessibilityLabel = Constants.blurViewAccessibilityLabel
         return blurEffectView
     }()
 
@@ -27,6 +33,7 @@ final class ScoreView: UIView {
         label.numberOfLines = 0
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 14)
+        label.accessibilityLabel = Constants.titleLabelAccessibilityLabel
         return label
     }()
 
@@ -37,6 +44,7 @@ final class ScoreView: UIView {
         label.numberOfLines = 0
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 14)
+        label.accessibilityLabel = Constants.subtitleLabelAccessibilityLabel
         return label
     }()
 
@@ -47,6 +55,7 @@ final class ScoreView: UIView {
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 48)
         label.textColor = .white
+        label.accessibilityLabel = Constants.scoreLabelAccessibilityLabel
         return label
     }()
 
@@ -71,6 +80,7 @@ final class ScoreView: UIView {
     }
 
     private func prepareView() {
+        accessibilityLabel = Constants.accessibilityLabel
         prepareBlurView()
         prepareCircularView()
         prepareStackView()
