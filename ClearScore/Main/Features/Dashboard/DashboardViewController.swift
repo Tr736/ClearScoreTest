@@ -18,7 +18,7 @@ final class DashboardViewController: UIViewController {
     }
 
     override func loadView() {
-        self.view = dashboardView
+        view = dashboardView
     }
 
     override func viewDidLoad() {
@@ -36,13 +36,13 @@ final class DashboardViewController: UIViewController {
 
 
     private func observers() {
-        self.viewModel.shouldRetryFetch.sink { shouldRetry in
+        viewModel.shouldRetryFetch.sink { shouldRetry in
             if shouldRetry == true {
 
             }
         }.store(in: &cancellable)
 
-        self.viewModel.$score.sink { [weak self] score in
+        viewModel.$score.sink { [weak self] score in
             guard let self = self else { return }
             if let score = score {
                 DispatchQueue.main.async {
