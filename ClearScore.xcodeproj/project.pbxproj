@@ -55,6 +55,9 @@
 		78E97869282ED4AE0078EFD2 /* GetRequestWithObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97868282ED4AE0078EFD2 /* GetRequestWithObject.swift */; };
 		78E9786B282EDF4F0078EFD2 /* URLSessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9786A282EDF4F0078EFD2 /* URLSessionType.swift */; };
 		78E9786D282FB98C0078EFD2 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9786C282FB98C0078EFD2 /* CircularProgressView.swift */; };
+		78E97875282FF0640078EFD2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97874282FF0640078EFD2 /* ScoreView.swift */; };
+		78E97878282FF0D10078EFD2 /* Score+DashboardAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97877282FF0D10078EFD2 /* Score+DashboardAPIResponse.swift */; };
+		78E9787D282FF2E10078EFD2 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9787C282FF2E10078EFD2 /* Score.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,9 @@
 		78E97868282ED4AE0078EFD2 /* GetRequestWithObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequestWithObject.swift; sourceTree = "<group>"; };
 		78E9786A282EDF4F0078EFD2 /* URLSessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionType.swift; sourceTree = "<group>"; };
 		78E9786C282FB98C0078EFD2 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		78E97874282FF0640078EFD2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		78E97877282FF0D10078EFD2 /* Score+DashboardAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Score+DashboardAPIResponse.swift"; sourceTree = "<group>"; };
+		78E9787C282FF2E10078EFD2 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +180,8 @@
 		78E97538282D97820078EFD2 /* ClearScore */ = {
 			isa = PBXGroup;
 			children = (
-				78E97872282FEE350078EFD2 /* Main */,
 				78E97871282FEDFB0078EFD2 /* FeatureSupport */,
+				78E97872282FEE350078EFD2 /* Main */,
 				78E9786E282FEDBB0078EFD2 /* UIComponents */,
 			);
 			path = ClearScore;
@@ -184,10 +190,10 @@
 		78E9754F282D97870078EFD2 /* ClearScoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				78E97861282ED4310078EFD2 /* Networking */,
-				78E97855282EADFD0078EFD2 /* Helpers */,
 				78E9783F282DB7D30078EFD2 /* Dashboard */,
+				78E97855282EADFD0078EFD2 /* Helpers */,
 				78E97831282DB15B0078EFD2 /* Mocks */,
+				78E97861282ED4310078EFD2 /* Networking */,
 			);
 			path = ClearScoreTests;
 			sourceTree = "<group>";
@@ -195,9 +201,9 @@
 		78E97559282D97870078EFD2 /* ClearScoreUITests */ = {
 			isa = PBXGroup;
 			children = (
-				78E9780D282DA2970078EFD2 /* Helpers */,
 				78E9780C282DA2830078EFD2 /* Dashboard */,
 				78E9758E282DA1E30078EFD2 /* Enums */,
+				78E9780D282DA2970078EFD2 /* Helpers */,
 			);
 			path = ClearScoreUITests;
 			sourceTree = "<group>";
@@ -206,9 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				78E9758D282D9DB50078EFD2 /* Assets */,
+				78E97547282D97870078EFD2 /* Info.plist */,
 				78E9758C282D9DA30078EFD2 /* Languages */,
 				78E97544282D97870078EFD2 /* LaunchScreen.storyboard */,
-				78E97547282D97870078EFD2 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -225,10 +231,11 @@
 		78E9756D282D982F0078EFD2 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				78E97847282DC01A0078EFD2 /* Views */,
-				78E97835282DB1EA0078EFD2 /* Networking */,
 				78E9756E282D98540078EFD2 /* DashboardViewController.swift */,
 				78E97848282DC0310078EFD2 /* DashboardViewModel.swift */,
+				78E97876282FF0BB0078EFD2 /* Models */,
+				78E97835282DB1EA0078EFD2 /* Networking */,
+				78E97847282DC01A0078EFD2 /* Views */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -244,11 +251,10 @@
 		78E97584282D9AA00078EFD2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				78E9782E282DAF5E0078EFD2 /* Protocols */,
+				78E97818282DA8E30078EFD2 /* API.swift */,
 				78E9781F282DAA3F0078EFD2 /* Enums */,
 				78E9781A282DA9D90078EFD2 /* Extensions */,
-				78E97818282DA8E30078EFD2 /* API.swift */,
-				78E9782C282DAF3E0078EFD2 /* ConcreteAPI.swift */,
+				78E9782E282DAF5E0078EFD2 /* Protocols */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -315,10 +321,10 @@
 		78E9781F282DAA3F0078EFD2 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				78E97820282DAA4B0078EFD2 /* RequestMethod.swift */,
 				78E97828282DABFA0078EFD2 /* APIError.swift */,
-				78E9782A282DACCD0078EFD2 /* Headers.swift */,
 				78E9785B282EB5FD0078EFD2 /* Endpoints.swift */,
+				78E9782A282DACCD0078EFD2 /* Headers.swift */,
+				78E97820282DAA4B0078EFD2 /* RequestMethod.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -335,8 +341,8 @@
 		78E97831282DB15B0078EFD2 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				78E9784C282E44E90078EFD2 /* MockAPIResponse.swift */,
 				78E9782F282DAF770078EFD2 /* MockAPI.swift */,
+				78E9784C282E44E90078EFD2 /* MockAPIResponse.swift */,
 				78E9785D282EB9220078EFD2 /* MockURLSession.swift */,
 			);
 			path = Mocks;
@@ -345,10 +351,10 @@
 		78E97835282DB1EA0078EFD2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				78E9783D282DB6AB0078EFD2 /* CoachingSummaryResponse.swift */,
+				78E9783B282DB66A0078EFD2 /* CreditReportInfoResponse.swift */,
 				78E97837282DB2180078EFD2 /* DashboardAPIRequest.swift */,
 				78E97839282DB63A0078EFD2 /* DashboardAPIResponse.swift */,
-				78E9783B282DB66A0078EFD2 /* CreditReportInfoResponse.swift */,
-				78E9783D282DB6AB0078EFD2 /* CoachingSummaryResponse.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -356,9 +362,9 @@
 		78E9783F282DB7D30078EFD2 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				78E9784F282E47840078EFD2 /* DashboardViewModelTests.swift */,
 				78E9784E282E474A0078EFD2 /* JSON */,
 				78E97846282DBA200078EFD2 /* Networking */,
-				78E9784F282E47840078EFD2 /* DashboardViewModelTests.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -398,11 +404,11 @@
 		78E97861282ED4310078EFD2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				78E9785F282EBBC00078EFD2 /* ConcreteAPITests.swift */,
 				78E97862282ED45A0078EFD2 /* APIRequestEmptyObject.swift */,
-				78E97864282ED4750078EFD2 /* TestResponseObject.swift */,
+				78E9785F282EBBC00078EFD2 /* ConcreteAPITests.swift */,
 				78E97866282ED48A0078EFD2 /* GetRequest.swift */,
 				78E97868282ED4AE0078EFD2 /* GetRequestWithObject.swift */,
+				78E97864282ED4750078EFD2 /* TestResponseObject.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -410,8 +416,8 @@
 		78E9786E282FEDBB0078EFD2 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				78E97870282FEDCF0078EFD2 /* Molecules */,
 				78E9786F282FEDC80078EFD2 /* Atoms */,
+				78E97870282FEDCF0078EFD2 /* Molecules */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -419,7 +425,7 @@
 		78E9786F282FEDC80078EFD2 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
-				78E9786C282FB98C0078EFD2 /* CircularProgressView.swift */,
+				78E9787E282FF3F00078EFD2 /* CircularProgressView */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 		78E97870282FEDCF0078EFD2 /* Molecules */ = {
 			isa = PBXGroup;
 			children = (
+				78E9787A282FF2C00078EFD2 /* ScoreView */,
 			);
 			path = Molecules;
 			sourceTree = "<group>";
@@ -443,11 +450,12 @@
 		78E97872282FEE350078EFD2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				78E9787F282FF4BF0078EFD2 /* Features */,
+				78E97879282FF1F70078EFD2 /* Networking */,
 				78E97812282DA3490078EFD2 /* Helpers */,
 				78E97569282D97A10078EFD2 /* Resources */,
 				78E9756C282D98200078EFD2 /* Lifecycle */,
 				78E97570282D98660078EFD2 /* Coordinator */,
-				78E9756D282D982F0078EFD2 /* Dashboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -458,6 +466,55 @@
 				78E97571282D98810078EFD2 /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		78E97876282FF0BB0078EFD2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78E97877282FF0D10078EFD2 /* Score+DashboardAPIResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		78E97879282FF1F70078EFD2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				78E9782C282DAF3E0078EFD2 /* ConcreteAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		78E9787A282FF2C00078EFD2 /* ScoreView */ = {
+			isa = PBXGroup;
+			children = (
+				78E9787B282FF2CE0078EFD2 /* Models */,
+				78E97874282FF0640078EFD2 /* ScoreView.swift */,
+			);
+			path = ScoreView;
+			sourceTree = "<group>";
+		};
+		78E9787B282FF2CE0078EFD2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78E9787C282FF2E10078EFD2 /* Score.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		78E9787E282FF3F00078EFD2 /* CircularProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				78E9786C282FB98C0078EFD2 /* CircularProgressView.swift */,
+			);
+			path = CircularProgressView;
+			sourceTree = "<group>";
+		};
+		78E9787F282FF4BF0078EFD2 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				78E9756D282D982F0078EFD2 /* Dashboard */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -601,6 +658,7 @@
 				78E9782B282DACCD0078EFD2 /* Headers.swift in Sources */,
 				78E97838282DB2180078EFD2 /* DashboardAPIRequest.swift in Sources */,
 				78E97819282DA8E30078EFD2 /* API.swift in Sources */,
+				78E9787D282FF2E10078EFD2 /* Score.swift in Sources */,
 				78E97821282DAA4B0078EFD2 /* RequestMethod.swift in Sources */,
 				78E9756F282D98540078EFD2 /* DashboardViewController.swift in Sources */,
 				78E9785C282EB5FD0078EFD2 /* Endpoints.swift in Sources */,
@@ -610,7 +668,9 @@
 				78E97849282DC0310078EFD2 /* DashboardViewModel.swift in Sources */,
 				78E9782D282DAF3E0078EFD2 /* ConcreteAPI.swift in Sources */,
 				78E9783C282DB66A0078EFD2 /* CreditReportInfoResponse.swift in Sources */,
+				78E97875282FF0640078EFD2 /* ScoreView.swift in Sources */,
 				78E97829282DABFA0078EFD2 /* APIError.swift in Sources */,
+				78E97878282FF0D10078EFD2 /* Score+DashboardAPIResponse.swift in Sources */,
 				78E9783E282DB6AB0078EFD2 /* CoachingSummaryResponse.swift in Sources */,
 				78E9753C282D97820078EFD2 /* SceneDelegate.swift in Sources */,
 				78E97581282D98EF0078EFD2 /* Appcoordinator.swift in Sources */,
