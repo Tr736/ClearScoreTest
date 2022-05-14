@@ -54,6 +54,7 @@
 		78E97867282ED48A0078EFD2 /* GetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97866282ED48A0078EFD2 /* GetRequest.swift */; };
 		78E97869282ED4AE0078EFD2 /* GetRequestWithObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97868282ED4AE0078EFD2 /* GetRequestWithObject.swift */; };
 		78E9786B282EDF4F0078EFD2 /* URLSessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9786A282EDF4F0078EFD2 /* URLSessionType.swift */; };
+		78E9786D282FB98C0078EFD2 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9786C282FB98C0078EFD2 /* CircularProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		78E97866282ED48A0078EFD2 /* GetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequest.swift; sourceTree = "<group>"; };
 		78E97868282ED4AE0078EFD2 /* GetRequestWithObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequestWithObject.swift; sourceTree = "<group>"; };
 		78E9786A282EDF4F0078EFD2 /* URLSessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionType.swift; sourceTree = "<group>"; };
+		78E9786C282FB98C0078EFD2 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,12 +174,9 @@
 		78E97538282D97820078EFD2 /* ClearScore */ = {
 			isa = PBXGroup;
 			children = (
-				78E97812282DA3490078EFD2 /* Helpers */,
-				78E97584282D9AA00078EFD2 /* Networking */,
-				78E97570282D98660078EFD2 /* Coordinator */,
-				78E9756D282D982F0078EFD2 /* Dashboard */,
-				78E9756C282D98200078EFD2 /* Lifecycle */,
-				78E97569282D97A10078EFD2 /* Resources */,
+				78E97872282FEE350078EFD2 /* Main */,
+				78E97871282FEDFB0078EFD2 /* FeatureSupport */,
+				78E9786E282FEDBB0078EFD2 /* UIComponents */,
 			);
 			path = ClearScore;
 			sourceTree = "<group>";
@@ -237,7 +236,6 @@
 		78E97570282D98660078EFD2 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				78E97571282D98810078EFD2 /* Coordinator.swift */,
 				78E97580282D98EF0078EFD2 /* Appcoordinator.swift */,
 			);
 			path = Coordinator;
@@ -409,6 +407,59 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		78E9786E282FEDBB0078EFD2 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				78E97870282FEDCF0078EFD2 /* Molecules */,
+				78E9786F282FEDC80078EFD2 /* Atoms */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		78E9786F282FEDC80078EFD2 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				78E9786C282FB98C0078EFD2 /* CircularProgressView.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		78E97870282FEDCF0078EFD2 /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Molecules;
+			sourceTree = "<group>";
+		};
+		78E97871282FEDFB0078EFD2 /* FeatureSupport */ = {
+			isa = PBXGroup;
+			children = (
+				78E97873282FEE520078EFD2 /* Coordinator */,
+				78E97584282D9AA00078EFD2 /* Networking */,
+			);
+			path = FeatureSupport;
+			sourceTree = "<group>";
+		};
+		78E97872282FEE350078EFD2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				78E97812282DA3490078EFD2 /* Helpers */,
+				78E97569282D97A10078EFD2 /* Resources */,
+				78E9756C282D98200078EFD2 /* Lifecycle */,
+				78E97570282D98660078EFD2 /* Coordinator */,
+				78E9756D282D982F0078EFD2 /* Dashboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		78E97873282FEE520078EFD2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				78E97571282D98810078EFD2 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -555,6 +606,7 @@
 				78E9785C282EB5FD0078EFD2 /* Endpoints.swift in Sources */,
 				78E97823282DAA800078EFD2 /* APIRequest.swift in Sources */,
 				78E97859282EAFF30078EFD2 /* LocalizedConstants.swift in Sources */,
+				78E9786D282FB98C0078EFD2 /* CircularProgressView.swift in Sources */,
 				78E97849282DC0310078EFD2 /* DashboardViewModel.swift in Sources */,
 				78E9782D282DAF3E0078EFD2 /* ConcreteAPI.swift in Sources */,
 				78E9783C282DB66A0078EFD2 /* CreditReportInfoResponse.swift in Sources */,
@@ -760,7 +812,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ClearScore/Resources/Info.plist;
+				INFOPLIST_FILE = ClearScore/Main/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -787,7 +839,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ClearScore/Resources/Info.plist;
+				INFOPLIST_FILE = ClearScore/Main/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
