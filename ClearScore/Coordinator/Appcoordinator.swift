@@ -10,7 +10,7 @@ struct AppCoordinator: Coordinator {
     }
 
     func start() {
-        let viewModel = DashboardViewModel(api: self.api)
+        let viewModel = DashboardViewModel(api: api)
         let viewController = DashboardViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController,
                                                 animated: false)

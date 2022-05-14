@@ -53,6 +53,7 @@
 		78E97865282ED4750078EFD2 /* TestResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97864282ED4750078EFD2 /* TestResponseObject.swift */; };
 		78E97867282ED48A0078EFD2 /* GetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97866282ED48A0078EFD2 /* GetRequest.swift */; };
 		78E97869282ED4AE0078EFD2 /* GetRequestWithObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97868282ED4AE0078EFD2 /* GetRequestWithObject.swift */; };
+		78E9786B282EDF4F0078EFD2 /* URLSessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9786A282EDF4F0078EFD2 /* URLSessionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		78E97864282ED4750078EFD2 /* TestResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResponseObject.swift; sourceTree = "<group>"; };
 		78E97866282ED48A0078EFD2 /* GetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequest.swift; sourceTree = "<group>"; };
 		78E97868282ED4AE0078EFD2 /* GetRequestWithObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequestWithObject.swift; sourceTree = "<group>"; };
+		78E9786A282EDF4F0078EFD2 /* URLSessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +176,7 @@
 				78E97584282D9AA00078EFD2 /* Networking */,
 				78E97570282D98660078EFD2 /* Coordinator */,
 				78E9756D282D982F0078EFD2 /* Dashboard */,
-				78E9756C282D98200078EFD2 /* LifeCycle */,
+				78E9756C282D98200078EFD2 /* Lifecycle */,
 				78E97569282D97A10078EFD2 /* Resources */,
 			);
 			path = ClearScore;
@@ -212,13 +214,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		78E9756C282D98200078EFD2 /* LifeCycle */ = {
+		78E9756C282D98200078EFD2 /* Lifecycle */ = {
 			isa = PBXGroup;
 			children = (
 				78E97539282D97820078EFD2 /* AppDelegate.swift */,
 				78E9753B282D97820078EFD2 /* SceneDelegate.swift */,
 			);
-			path = LifeCycle;
+			path = Lifecycle;
 			sourceTree = "<group>";
 		};
 		78E9756D282D982F0078EFD2 /* Dashboard */ = {
@@ -244,7 +246,7 @@
 		78E97584282D9AA00078EFD2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				78E9782E282DAF5E0078EFD2 /* Helpers */,
+				78E9782E282DAF5E0078EFD2 /* Protocols */,
 				78E9781F282DAA3F0078EFD2 /* Enums */,
 				78E9781A282DA9D90078EFD2 /* Extensions */,
 				78E97818282DA8E30078EFD2 /* API.swift */,
@@ -323,12 +325,13 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		78E9782E282DAF5E0078EFD2 /* Helpers */ = {
+		78E9782E282DAF5E0078EFD2 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				78E97822282DAA800078EFD2 /* APIRequest.swift */,
+				78E9786A282EDF4F0078EFD2 /* URLSessionType.swift */,
 			);
-			path = Helpers;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		78E97831282DB15B0078EFD2 /* Mocks */ = {
@@ -559,6 +562,7 @@
 				78E9783E282DB6AB0078EFD2 /* CoachingSummaryResponse.swift in Sources */,
 				78E9753C282D97820078EFD2 /* SceneDelegate.swift in Sources */,
 				78E97581282D98EF0078EFD2 /* Appcoordinator.swift in Sources */,
+				78E9786B282EDF4F0078EFD2 /* URLSessionType.swift in Sources */,
 				78E9781C282DA9E90078EFD2 /* URLSession+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

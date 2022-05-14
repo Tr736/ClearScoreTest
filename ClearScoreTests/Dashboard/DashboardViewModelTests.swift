@@ -1,4 +1,5 @@
 import XCTest
+import Combine
 @testable import ClearScore
 class DashboardViewModelTests: XCTestCase {
 
@@ -45,6 +46,7 @@ class DashboardViewModelTests: XCTestCase {
     }
     private var sut: DashboardViewModel!
     private var api: APIType!
+    private var cancellable: [AnyCancellable] = []
 
     override func setUp() {
         super.setUp()
@@ -58,16 +60,15 @@ class DashboardViewModelTests: XCTestCase {
         api = nil
     }
 
-    private func test_APIResponse() {
+    func test_APIResponse() {
         let expectation = expectation(description: Constants.expectationName)
-        Task {
-            do {
-                try await sut.fetchDashboardData()
-            } catch {
-                XCTFail(Constants.failedMessage + error.localizedDescription)
+
+        sut.fetchDashboardData()
+        sut.shouldRetryFetch.sink { shouldRetry in
+            if !shouldRetry {
+                expectation.fulfill()
             }
-            expectation.fulfill()
-        }
+        }.store(in: &cancellable)
 
         waitForExpectations(timeout: Constants.timeout)
         XCTAssertNotNil(sut.data)
@@ -77,7 +78,7 @@ class DashboardViewModelTests: XCTestCase {
         XCTAssertEqual(sut.data!.creditReportInfo.score,
                        Constants.score)
         XCTAssertEqual(sut.data!.creditReportInfo.scoreBand,
-                       Constants.score)
+                       Constants.scoreBand)
         XCTAssertEqual(sut.data!.creditReportInfo.clientRef,
                        Constants.clientRef)
         XCTAssertEqual(sut.data!.creditReportInfo.status,
@@ -93,7 +94,7 @@ class DashboardViewModelTests: XCTestCase {
         XCTAssertEqual(sut.data!.creditReportInfo.monthsSinceLastDelinquent,
                        Constants.monthsSinceLastDelinquent)
         XCTAssertEqual(sut.data!.creditReportInfo.hasEverBeenDelinquent,
-                       Constants.hasEverDefaulted)
+                       Constants.hasEverBeenDelinquent)
         XCTAssertEqual(sut.data!.creditReportInfo.percentageCreditUsed,
                        Constants.percentageCreditUsed)
         XCTAssertEqual(sut.data!.creditReportInfo.percentageCreditUsedDirectionFlag,
