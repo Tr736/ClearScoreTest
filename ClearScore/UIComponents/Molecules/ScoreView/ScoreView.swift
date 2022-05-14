@@ -4,6 +4,7 @@ final class ScoreView: UIView {
     private enum Constants {
         static let padding: CGFloat = 36
         static let spacing: CGFloat = 8
+        static let buttonSize: CGFloat = 60
         static let accessibilityLabel = "scoreView"
         static let blurViewAccessibilityLabel = "blurView"
         static let titleLabelAccessibilityLabel = "titleLabel"
@@ -72,6 +73,17 @@ final class ScoreView: UIView {
         return stackView
     }()
 
+    private lazy var refreshButton: UIButton = {
+        var button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage.refreshImage, for: .normal)
+        button.tintColor = .white
+        button.contentHorizontalAlignment = .fill
+        button.contentVerticalAlignment = .fill
+        button.imageView?.contentMode = .scaleAspectFit
+        return button
+    }()
+
     convenience init(title: String, subtitle: String) {
         self.init(frame: CGRect.zero)
         prepareView()
@@ -83,7 +95,6 @@ final class ScoreView: UIView {
         accessibilityLabel = Constants.accessibilityLabel
         prepareBlurView()
         prepareCircularView()
-        prepareStackView()
     }
 
     private func prepareBlurView() {
@@ -124,18 +135,43 @@ final class ScoreView: UIView {
         ])
     }
 
+    private func prepareRefreshButton() {
+        guard refreshButton.superview == nil else { return }
+        addSubview(refreshButton)
+        NSLayoutConstraint.activate([
+            refreshButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            refreshButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            refreshButton.widthAnchor.constraint(equalToConstant: Constants.buttonSize),
+            refreshButton.heightAnchor.constraint(equalToConstant: Constants.buttonSize)
+        ])
+    }
+
     func updateScore(actual: CGFloat, max: CGFloat) {
+        if refreshButton.superview != nil {
+            refreshButton.removeFromSuperview()
+        }
+
         circularProgressView.updateProgress(actual: actual,
                                             max: max)
         scoreLabel.text = String(describing: actual)
         if let subtitle = subtitleLabel.text {
             subtitleLabel.text = subtitle + " \(max)"
         }
+        prepareStackView()
 
         if verticalStackView.alpha == 0 {
             UIView.animate(withDuration: 0.23) {
                 self.verticalStackView.alpha = 1
             }
         }
+    }
+
+    func showRefreshButton(target: Any, selector: Selector) {
+        if verticalStackView.superview != nil {
+            verticalStackView.removeFromSuperview()
+        }
+        prepareRefreshButton()
+        refreshButton.isEnabled = true
+        refreshButton.addTarget(target, action: selector, for: .touchUpInside)
     }
 }

@@ -67,4 +67,7 @@ final class DashboardView: UIView {
                                  max: score.max)
     }
 
+    func showRefreshButton(target: Any, selector: Selector) {
+        scoreView.showRefreshButton(target: target, selector: selector)
+    }
 }

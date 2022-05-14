@@ -60,6 +60,7 @@
 		78E9787D282FF2E10078EFD2 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9787C282FF2E10078EFD2 /* Score.swift */; };
 		78E97881283004370078EFD2 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97880283004370078EFD2 /* UIImage+Extensions.swift */; };
 		78E9788A28303EAD0078EFD2 /* ScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9788928303EAD0078EFD2 /* ScoreTests.swift */; };
+		78E9788F283049190078EFD2 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9788E283049190078EFD2 /* Image+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		78E9787C282FF2E10078EFD2 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		78E97880283004370078EFD2 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		78E9788928303EAD0078EFD2 /* ScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTests.swift; sourceTree = "<group>"; };
+		78E9788E283049190078EFD2 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				78E97828282DABFA0078EFD2 /* APIError.swift */,
-				78E9785B282EB5FD0078EFD2 /* Endpoints.swift */,
 				78E9782A282DACCD0078EFD2 /* Headers.swift */,
 				78E97820282DAA4B0078EFD2 /* RequestMethod.swift */,
 			);
@@ -419,6 +420,7 @@
 		78E9786E282FEDBB0078EFD2 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				78E9788C2830488E0078EFD2 /* Resources */,
 				78E9786F282FEDC80078EFD2 /* Atoms */,
 				78E97870282FEDCF0078EFD2 /* Molecules */,
 			);
@@ -428,6 +430,7 @@
 		78E9786F282FEDC80078EFD2 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				78E9788B283043170078EFD2 /* Buttons */,
 				78E9787E282FF3F00078EFD2 /* CircularProgressView */,
 			);
 			path = Atoms;
@@ -482,6 +485,7 @@
 		78E97879282FF1F70078EFD2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				78E9785B282EB5FD0078EFD2 /* Endpoints.swift */,
 				78E9782C282DAF3E0078EFD2 /* ConcreteAPI.swift */,
 			);
 			path = Networking;
@@ -577,6 +581,29 @@
 				78E9788928303EAD0078EFD2 /* ScoreTests.swift */,
 			);
 			path = Molecules;
+			sourceTree = "<group>";
+		};
+		78E9788B283043170078EFD2 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		78E9788C2830488E0078EFD2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				78E9788D283048F60078EFD2 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		78E9788D283048F60078EFD2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				78E9788E283049190078EFD2 /* Image+Extensions.swift */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -715,6 +742,7 @@
 				78E97572282D98810078EFD2 /* Coordinator.swift in Sources */,
 				78E97583282D99DE0078EFD2 /* DashboardView.swift in Sources */,
 				78E9783A282DB63A0078EFD2 /* DashboardAPIResponse.swift in Sources */,
+				78E9788F283049190078EFD2 /* Image+Extensions.swift in Sources */,
 				78E9753A282D97820078EFD2 /* AppDelegate.swift in Sources */,
 				78E97811282DA3440078EFD2 /* AppContext.swift in Sources */,
 				78E9782B282DACCD0078EFD2 /* Headers.swift in Sources */,
