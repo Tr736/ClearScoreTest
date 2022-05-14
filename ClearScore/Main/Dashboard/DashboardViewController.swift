@@ -4,10 +4,10 @@ final class DashboardViewController: UIViewController {
     private enum Constants {
         static let navigationBarAccessibilityLabel = "DashboardNavViewController"
     }
-
+    private let dashboardView = DashboardView()
     private var viewModel: DashboardViewModel
     private var cancellable: [AnyCancellable] = []
-    
+
     init(viewModel: DashboardViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -18,7 +18,7 @@ final class DashboardViewController: UIViewController {
     }
 
     override func loadView() {
-        self.view = DashboardView()
+        self.view = dashboardView
     }
 
     override func viewDidLoad() {
@@ -39,6 +39,15 @@ final class DashboardViewController: UIViewController {
         self.viewModel.shouldRetryFetch.sink { shouldRetry in
             if shouldRetry == true {
 
+            }
+        }.store(in: &cancellable)
+
+        self.viewModel.$score.sink { [weak self] score in
+            guard let self = self else { return }
+            if let score = score {
+                DispatchQueue.main.async {
+                    self.dashboardView.update(score: score)
+                }
             }
         }.store(in: &cancellable)
     }
