@@ -1,4 +1,6 @@
 // Dashboard
-
-// Navigationbar title
 "Dashboard" = "Dashboard";
+
+// Donut Score
+"You credit Score is" = "You credit Score is";
+"of out" = "out of";

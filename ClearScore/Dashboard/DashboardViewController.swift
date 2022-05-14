@@ -1,12 +1,13 @@
 import UIKit
-
+import Combine
 final class DashboardViewController: UIViewController {
     private enum Constants {
         static let navigationBarAccessibilityLabel = "DashboardNavViewController"
     }
 
     private var viewModel: DashboardViewModel
-
+    private var cancellable: [AnyCancellable] = []
+    
     init(viewModel: DashboardViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -22,11 +23,23 @@ final class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        observers()
         prepareViewController()
+        
+        viewModel.fetchDashboardData()
     }
 
     private func prepareViewController() {
         navigationController?.navigationBar.accessibilityLabel = Constants.navigationBarAccessibilityLabel
         title = LocalizedConstants.dashboardTitle
+    }
+
+
+    private func observers() {
+        self.viewModel.shouldRetryFetch.sink { shouldRetry in
+            if shouldRetry == true {
+
+            }
+        }.store(in: &cancellable)
     }
 }

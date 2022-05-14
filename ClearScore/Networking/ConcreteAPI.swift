@@ -12,7 +12,7 @@ struct ConcreteAPI: APIType {
 
     func execute<T>(apiRequest: T) async throws -> T.ResponseBody where T : APIRequest {
         let data = try await executeRaw(apiRequest: apiRequest).data
-        let decoded: T.ResponseBody = try self.decode(from: data)
+        let decoded: T.ResponseBody = try decode(from: data)
         return decoded
     }
 

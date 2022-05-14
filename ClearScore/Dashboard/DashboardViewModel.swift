@@ -1,21 +1,23 @@
 import Foundation
+import Combine
 class DashboardViewModel {
     private var api: APIType
     private(set) var data: DashboardAPIResponse?
+    internal var shouldRetryFetch = PassthroughSubject<Bool, Never>()
 
     init(api: APIType) {
         self.api = api
-        Task {
-            do {
-                try await self.fetchDashboardData()
-            } catch {
-                print(error)
-            }
-        }
     }
 
-    func fetchDashboardData() async throws {
+    func fetchDashboardData() {
         let request = DashboardAPIRequest()
-        self.data = try await api.execute(apiRequest: request)
+        Task {
+            do {
+                data = try await api.execute(apiRequest: request)
+                shouldRetryFetch.send(false)
+            } catch {
+                shouldRetryFetch.send(true)
+            }
+        }
     }
 }
