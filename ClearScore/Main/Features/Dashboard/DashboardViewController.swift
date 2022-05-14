@@ -36,9 +36,13 @@ final class DashboardViewController: UIViewController {
 
 
     private func observers() {
-        viewModel.shouldRetryFetch.sink { shouldRetry in
+        viewModel.shouldRetryFetch.sink { [weak self] shouldRetry in
+            guard let self = self else { return }
             if shouldRetry == true {
-
+                DispatchQueue.main.async {
+                    self.dashboardView.showRefreshButton(target: self,
+                                                         selector: #selector(self.retryButtonTapped(_:)))
+                }
             }
         }.store(in: &cancellable)
 
@@ -50,5 +54,10 @@ final class DashboardViewController: UIViewController {
                 }
             }
         }.store(in: &cancellable)
+    }
+
+    @objc func retryButtonTapped(_ sender: UIButton) {
+        sender.isEnabled = !sender.isEnabled
+        viewModel.fetchDashboardData()
     }
 }
