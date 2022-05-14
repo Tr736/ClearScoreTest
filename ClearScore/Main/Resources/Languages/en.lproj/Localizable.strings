@@ -1,6 +1,8 @@
+// PLEASE KEEP ALPHABETIZED!!!!
+
 // Dashboard
 "Dashboard" = "Dashboard";
 
-// Donut Score
-"You credit Score is" = "You credit Score is";
+// ScoreView
 "of out" = "out of";
+"You credit score is" = "You credit score is";

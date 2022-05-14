@@ -7,6 +7,7 @@ final class CircularProgressView: UIView {
         static let circleRadiusWidth: CGFloat = 2 * Constants.circleRadius
         static let circleRadiusHeight: CGFloat = 2 * Constants.circleRadius
         static let rotationAngle: CGFloat = -90
+        static let lineWidth: CGFloat = 4
     }
 
    private var progress: CGFloat {
@@ -31,9 +32,9 @@ final class CircularProgressView: UIView {
     private lazy var circlePathLayer: CAShapeLayer = {
         let circlePathLayer = CAShapeLayer()
         circlePathLayer.frame = bounds
-        circlePathLayer.lineWidth = 8
+        circlePathLayer.lineWidth = Constants.lineWidth
         circlePathLayer.fillColor = UIColor.clear.cgColor
-        circlePathLayer.strokeColor = UIColor.red.cgColor
+        circlePathLayer.strokeColor = UIColor.white.cgColor
         circlePathLayer.lineCap = .round
         return circlePathLayer
     }()
