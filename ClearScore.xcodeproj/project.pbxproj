@@ -58,6 +58,7 @@
 		78E97875282FF0640078EFD2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97874282FF0640078EFD2 /* ScoreView.swift */; };
 		78E97878282FF0D10078EFD2 /* Score+DashboardAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97877282FF0D10078EFD2 /* Score+DashboardAPIResponse.swift */; };
 		78E9787D282FF2E10078EFD2 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9787C282FF2E10078EFD2 /* Score.swift */; };
+		78E97881283004370078EFD2 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E97880283004370078EFD2 /* UIImage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		78E97874282FF0640078EFD2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		78E97877282FF0D10078EFD2 /* Score+DashboardAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Score+DashboardAPIResponse.swift"; sourceTree = "<group>"; };
 		78E9787C282FF2E10078EFD2 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		78E97880283004370078EFD2 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 			children = (
 				78E97542282D97870078EFD2 /* Images.xcassets */,
 				78E9756A282D97D70078EFD2 /* Colors.xcassets */,
+				78E97880283004370078EFD2 /* UIImage+Extensions.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				78E9783E282DB6AB0078EFD2 /* CoachingSummaryResponse.swift in Sources */,
 				78E9753C282D97820078EFD2 /* SceneDelegate.swift in Sources */,
 				78E97581282D98EF0078EFD2 /* Appcoordinator.swift in Sources */,
+				78E97881283004370078EFD2 /* UIImage+Extensions.swift in Sources */,
 				78E9786B282EDF4F0078EFD2 /* URLSessionType.swift in Sources */,
 				78E9781C282DA9E90078EFD2 /* URLSession+Extensions.swift in Sources */,
 			);
