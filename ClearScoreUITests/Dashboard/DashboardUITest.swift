@@ -1,6 +1,6 @@
 import XCTest
 
-class DashboardUITest: ClearScoreTestCase {
+class DashboardOnlineUITest: ClearScoreTestCase {
 
     override func setUp() {
         super.setUp()
@@ -13,6 +13,7 @@ class DashboardUITest: ClearScoreTestCase {
 
     func test_dashboard_journey() {
         launch()
+        TabBar.dashboardButton.tap()
         XCTAssertTrue(Dashboard.screen.wait())
         XCTAssertTrue(ScoreView.view.wait())
         XCTAssertTrue(ScoreView.blurView.wait())
@@ -33,6 +34,32 @@ class DashboardUITest: ClearScoreTestCase {
         XCTAssertTrue(Report.screen.wait())
         Report.screen.swipeRight()
         XCTAssertTrue(Dashboard.screen.wait())
+    }
+
+}
+
+class DashboardOfflineUITest: ClearScoreOfflineTestcase {
+
+    override func setUp() {
+        super.setUp()
+    }
+
+    override func tearDown() {
+        app.terminate()
+        super.tearDown()
+    }
+
+    func test_dashboard_journey() {
+        launch()
+        TabBar.dashboardButton.tap()
+        XCTAssertTrue(Dashboard.screen.wait())
+        XCTAssertTrue(ScoreView.view.wait())
+        XCTAssertTrue(ScoreView.blurView.wait())
+        XCTAssertTrue(ScoreView.refreshButton.wait())
+        XCTAssertTrue(ScoreView.refreshButton.isHittable)
+        XCTAssertTrue(ScoreView.refreshButton.isEnabled)
+        ScoreView.refreshButton.tap()
+
     }
 
 }

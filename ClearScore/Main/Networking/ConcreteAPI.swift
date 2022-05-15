@@ -3,7 +3,6 @@ import Foundation
 struct ConcreteAPI: APIType {
     private let urlSession: URLSessionType
     private let baseURL: URL?
-
     init(baseURL: URL? = URL(string: Endpoints.baseURL),
          urlSession: URLSessionType = URLSession.shared) {
         self.baseURL = baseURL
@@ -11,6 +10,9 @@ struct ConcreteAPI: APIType {
     }
 
     func execute<T>(apiRequest: T) async throws -> T.ResponseBody where T : APIRequest {
+        if ConcreteReachability.shared.isReachable == false {
+            throw APIError.cannotReachServer
+        }
         let data = try await executeRaw(apiRequest: apiRequest).data
         let decoded: T.ResponseBody = try decode(from: data)
         return decoded

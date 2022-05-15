@@ -67,6 +67,7 @@
 		78E9789D2830E5210078EFD2 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9789C2830E5210078EFD2 /* ReportView.swift */; };
 		78E978A12830FDA10078EFD2 /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E978A02830FDA10078EFD2 /* MockCoordinator.swift */; };
 		78E978A42831030F0078EFD2 /* ReportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E978A32831030F0078EFD2 /* ReportUITests.swift */; };
+		78E978A628310F7A0078EFD2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E978A528310F7A0078EFD2 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		78E9789C2830E5210078EFD2 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		78E978A02830FDA10078EFD2 /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
 		78E978A32831030F0078EFD2 /* ReportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUITests.swift; sourceTree = "<group>"; };
+		78E978A528310F7A0078EFD2 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -501,6 +503,7 @@
 			children = (
 				78E9785B282EB5FD0078EFD2 /* Endpoints.swift */,
 				78E9782C282DAF3E0078EFD2 /* ConcreteAPI.swift */,
+				78E978A528310F7A0078EFD2 /* Reachability.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -834,6 +837,7 @@
 				78E9783E282DB6AB0078EFD2 /* CoachingSummaryResponse.swift in Sources */,
 				78E9753C282D97820078EFD2 /* SceneDelegate.swift in Sources */,
 				78E97581282D98EF0078EFD2 /* Appcoordinator.swift in Sources */,
+				78E978A628310F7A0078EFD2 /* Reachability.swift in Sources */,
 				78E97881283004370078EFD2 /* UIImage+Extensions.swift in Sources */,
 				78E9786B282EDF4F0078EFD2 /* URLSessionType.swift in Sources */,
 				78E9781C282DA9E90078EFD2 /* URLSession+Extensions.swift in Sources */,

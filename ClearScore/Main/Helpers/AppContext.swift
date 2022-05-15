@@ -8,9 +8,14 @@ struct AppContext {
         ProcessInfo.processInfo.environment[LaunchEnvironment.Keys.uiTests] == "1"
     }
 
+    static var isOffline: Bool {
+        ProcessInfo.processInfo.environment[LaunchEnvironment.Keys.isOffline] == "1"
+    }
+
     internal class LaunchEnvironment: NSObject {
         internal enum Keys {
             static let uiTests = "UITest"
+            static let isOffline = "Offline"
         }
     }
 }
