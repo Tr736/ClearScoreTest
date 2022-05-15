@@ -46,6 +46,8 @@ I've probably broken the D in SOLID by doing this and wouldn't expect a PR appro
 The CircularProgressView was ripped from a RayWenderlich tutorial. Although relatively simple to build, I did this to save on development time.
 Given more time this should be built out to support different sizes rather than hardcoded values.
 
+The architecture has only a single scheme. To support more environments more target schemes should be added.
+
 ## Error Handling
 The app currently has a retry button on the dashboard if the API call fails. However, given more time id expect a Toast or other notification prompt providing more
 information to the user / qa / developer. 
