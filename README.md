@@ -78,4 +78,4 @@ Every class should be marked final. Im not a fan of inherritance and avoid it wh
 Ive marked some items as internal. I understand that this is default but I believe in being explicit. Sometimes I forget this so you may find instances where it's missed along with the odd property thats marked private.
 
 Ive adopted Combine and Async/Await, working with a ObjC/Swift code base, I found it quite refreshing and fun to use.
-You will find ive used it Combine sparingly. All too often ive seen RXSwift plastered everywhere in codebases and its a royal pain to debug and work with. 
+You will find ive used Combine sparingly. All too often ive seen RXSwift plastered everywhere in codebases and its a royal pain to debug and work with. So you will still find instance of Targer and Selector in the code base. This is a personal coding preference.
