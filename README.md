@@ -63,6 +63,10 @@ More work on Unit tests to try and hit the 80% threshold
 I'm a big fan of Cocoapods which would be my preference. This project currently has everything in Native and no DM is required in the interest of KISS.
 In a production environment, I would personally add SwiftGen, SwiftLint, and possibly SwiftFormat.
 
+## Accessibility
+No work has been done to support Accessibility and would be high on the todo list.
+
+
 ### Other
 The App currently supports iPhone and iPad. This was done to enable me to quickly see the UI on multiple devices. Personally would turn off iPad and
 build a separate project to take advantage of the iPads OS and other advanced features.
