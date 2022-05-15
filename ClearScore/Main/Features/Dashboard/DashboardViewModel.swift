@@ -4,7 +4,7 @@ import Combine
 class DashboardViewModel {
     var coordinator: Coordinator?
 
-    private(set) var api: APIType
+    private var api: APIType
     private(set) var data: DashboardAPIResponse?
     internal var shouldRetryFetch = PassthroughSubject<Bool, Never>()
     @Published private(set)var score: Score?
