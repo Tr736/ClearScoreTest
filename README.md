@@ -72,3 +72,6 @@ The App currently supports iPhone and iPad. This was done to enable me to quickl
 build a separate project to take advantage of the iPads OS and other advanced features.
 
 The app supports ALL rotations and appears to function well. However, it is designed for portrait and more work would be required to move UIElements.
+
+Every class should be marked final. Im not a fan of inherritance and avoid it where possible.
+Ive marked some items as internal. I understand that this is default but I believe in being explicit. Sometimes I forget this so you may find where ive missed this and the same goes for private properties.
