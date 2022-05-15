@@ -53,6 +53,7 @@ information to the user / qa / developer.
 ## UI & Unit Tests
 UITests currently support Offline and Online modes.
 UITests are only in English. If I added another language and UITest to match I would expect them to fail. I'm not confident that the localization is working.
+Currently when running the DashboardOfflineUITest the enabling of the button happens too quickly thus checking if its disabled fails. I stopped building out the UITest here.
 
 ### Code Coverage
 UITest - 91.1%
