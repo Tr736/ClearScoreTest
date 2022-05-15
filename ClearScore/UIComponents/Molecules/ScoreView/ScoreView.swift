@@ -12,6 +12,11 @@ final class ScoreView: UIView {
         static let scoreLabelAccessibilityLabel = "scoreLabel"
     }
 
+    private lazy var tapGesture: UITapGestureRecognizer = {
+        let tapGesture = UITapGestureRecognizer()
+        return tapGesture
+    }()
+
     private lazy var blurView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -172,8 +177,14 @@ final class ScoreView: UIView {
         if verticalStackView.superview != nil {
             verticalStackView.removeFromSuperview()
         }
+        removeGestureRecognizer(tapGesture)
         prepareRefreshButton()
         refreshButton.isEnabled = true
         refreshButton.addTarget(target, action: selector, for: .touchUpInside)
+    }
+
+    func addTapGesture(target: Any, selector: Selector) {
+        addGestureRecognizer(tapGesture)
+        tapGesture.addTarget(target, action: selector)
     }
 }

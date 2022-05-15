@@ -47,11 +47,13 @@ class DashboardViewModelTests: XCTestCase {
     private var sut: DashboardViewModel!
     private var api: APIType!
     private var cancellable: [AnyCancellable] = []
+    private var mockCoordinator: MockCoordinator!
 
     override func setUp() {
         super.setUp()
+        mockCoordinator = MockCoordinator()
         api = MockAPI()
-        sut = DashboardViewModel(api: api)
+        sut = DashboardViewModel(api: api, coordinator: mockCoordinator)
     }
 
     override func tearDown() {
