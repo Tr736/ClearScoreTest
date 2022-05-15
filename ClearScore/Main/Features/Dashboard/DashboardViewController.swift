@@ -55,6 +55,7 @@ final class DashboardViewController: UIViewController {
     }
 
     @objc func retryButtonTapped(_ sender: UIButton) {
+        guard sender.isEnabled else { return }
         sender.isEnabled = false
         viewModel.fetchDashboardData()
     }

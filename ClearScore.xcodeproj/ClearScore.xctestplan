@@ -25,6 +25,7 @@
     },
     {
       "skippedTests" : [
+        "ClearScoreOfflineTestcase",
         "ClearScoreTestCase"
       ],
       "target" : {

@@ -10,6 +10,7 @@ final class ScoreView: UIView {
         static let titleLabelAccessibilityLabel = "titleLabel"
         static let subtitleLabelAccessibilityLabel = "subtitleLabel"
         static let scoreLabelAccessibilityLabel = "scoreLabel"
+        static let refreshButtonAccessibilityLabel = "refreshButton"
     }
 
     private lazy var tapGesture: UITapGestureRecognizer = {
@@ -88,6 +89,7 @@ final class ScoreView: UIView {
         button.contentHorizontalAlignment = .fill
         button.contentVerticalAlignment = .fill
         button.imageView?.contentMode = .scaleAspectFit
+        button.accessibilityLabel = Constants.refreshButtonAccessibilityLabel
         return button
     }()
 
