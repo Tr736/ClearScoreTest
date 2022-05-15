@@ -1,10 +1,13 @@
 import Foundation
 import Combine
 class DashboardViewModel {
+    var coordinator: AppCoordinator?
+
     private var api: APIType
     private(set) var data: DashboardAPIResponse?
     internal var shouldRetryFetch = PassthroughSubject<Bool, Never>()
     @Published private(set)var score: Score?
+
     init(api: APIType) {
         self.api = api
     }
@@ -22,5 +25,9 @@ class DashboardViewModel {
                 shouldRetryFetch.send(true)
             }
         }
+    }
+
+    func showReport() {
+        coordinator?.showReport()
     }
 }

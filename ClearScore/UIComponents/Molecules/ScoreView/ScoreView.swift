@@ -17,6 +17,8 @@ final class ScoreView: UIView {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.translatesAutoresizingMaskIntoConstraints = false
         blurEffectView.accessibilityLabel = Constants.blurViewAccessibilityLabel
+        blurEffectView.alpha = 0.7
+
         return blurEffectView
     }()
 
