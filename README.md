@@ -76,4 +76,5 @@ The app supports ALL rotations and appears to function well. However, it is desi
 Every class should be marked final. Im not a fan of inherritance and avoid it where possible.
 Ive marked some items as internal. I understand that this is default but I believe in being explicit. Sometimes I forget this so you may find instances where it's missed along with the odd property thats marked private.
 
-Ive adopted Combine and Async/Await, working with a ObjC/Swift code base, I found it quite refreshing and fun to use. You will find ive used it sparingly. All too often ive seen RXSwift painted everywhere and its a royal pain to debug and work with. 
+Ive adopted Combine and Async/Await, working with a ObjC/Swift code base, I found it quite refreshing and fun to use.
+You will find ive used it Combine sparingly. All too often ive seen RXSwift plastered everywhere in codebases and its a royal pain to debug and work with. 
