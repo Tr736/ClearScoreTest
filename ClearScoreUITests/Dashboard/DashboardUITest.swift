@@ -29,7 +29,10 @@ class DashboardUITest: ClearScoreTestCase {
         XCTAssertTrue(Dashboard.screen.wait())
         Dashboard.screen.swipeRight()
         XCTAssertTrue(Dashboard.screen.wait())
-
+        ScoreView.view.tap()
+        XCTAssertTrue(Report.screen.wait())
+        Report.screen.swipeRight()
+        XCTAssertTrue(Dashboard.screen.wait())
     }
 
 }

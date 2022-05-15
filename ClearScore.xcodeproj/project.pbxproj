@@ -65,6 +65,8 @@
 		78E978952830D1740078EFD2 /* SlidingTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E978942830D1740078EFD2 /* SlidingTabBarController.swift */; };
 		78E9789A2830E2400078EFD2 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E978992830E2400078EFD2 /* UIColor+Extensions.swift */; };
 		78E9789D2830E5210078EFD2 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9789C2830E5210078EFD2 /* ReportView.swift */; };
+		78E978A12830FDA10078EFD2 /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E978A02830FDA10078EFD2 /* MockCoordinator.swift */; };
+		78E978A42831030F0078EFD2 /* ReportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E978A32831030F0078EFD2 /* ReportUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,8 @@
 		78E978942830D1740078EFD2 /* SlidingTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingTabBarController.swift; sourceTree = "<group>"; };
 		78E978992830E2400078EFD2 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		78E9789C2830E5210078EFD2 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		78E978A02830FDA10078EFD2 /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
+		78E978A32831030F0078EFD2 /* ReportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +218,7 @@
 		78E97559282D97870078EFD2 /* ClearScoreUITests */ = {
 			isa = PBXGroup;
 			children = (
+				78E978A2283102F90078EFD2 /* Report */,
 				78E9780C282DA2830078EFD2 /* Dashboard */,
 				78E9758E282DA1E30078EFD2 /* Enums */,
 				78E9780D282DA2970078EFD2 /* Helpers */,
@@ -355,9 +360,8 @@
 		78E97831282DB15B0078EFD2 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				78E9782F282DAF770078EFD2 /* MockAPI.swift */,
-				78E9784C282E44E90078EFD2 /* MockAPIResponse.swift */,
-				78E9785D282EB9220078EFD2 /* MockURLSession.swift */,
+				78E9789F2830FD8F0078EFD2 /* Coordinator */,
+				78E9789E2830FD810078EFD2 /* Networking */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -642,6 +646,32 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		78E9789E2830FD810078EFD2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				78E9782F282DAF770078EFD2 /* MockAPI.swift */,
+				78E9784C282E44E90078EFD2 /* MockAPIResponse.swift */,
+				78E9785D282EB9220078EFD2 /* MockURLSession.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		78E9789F2830FD8F0078EFD2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				78E978A02830FDA10078EFD2 /* MockCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		78E978A2283102F90078EFD2 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				78E978A32831030F0078EFD2 /* ReportUITests.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -824,6 +854,7 @@
 				78E97867282ED48A0078EFD2 /* GetRequest.swift in Sources */,
 				78E97860282EBBC00078EFD2 /* ConcreteAPITests.swift in Sources */,
 				78E97869282ED4AE0078EFD2 /* GetRequestWithObject.swift in Sources */,
+				78E978A12830FDA10078EFD2 /* MockCoordinator.swift in Sources */,
 				78E97865282ED4750078EFD2 /* TestResponseObject.swift in Sources */,
 				78E97863282ED45A0078EFD2 /* APIRequestEmptyObject.swift in Sources */,
 			);
@@ -834,6 +865,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78E97813282DA3F50078EFD2 /* AppContext.swift in Sources */,
+				78E978A42831030F0078EFD2 /* ReportUITests.swift in Sources */,
 				78E97842282DB8840078EFD2 /* APIRequest.swift in Sources */,
 				78E97590282DA1F20078EFD2 /* Dashboard.swift in Sources */,
 				78E97815282DA4720078EFD2 /* DashboardUITest.swift in Sources */,

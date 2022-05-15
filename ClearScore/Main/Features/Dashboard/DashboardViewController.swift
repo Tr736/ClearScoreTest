@@ -47,6 +47,8 @@ final class DashboardViewController: UIViewController {
             if let score = score {
                 DispatchQueue.main.async {
                     self.dashboardView.update(score: score)
+                    self.dashboardView.addTapGestureToScoreView(target: self,
+                                                                selector: #selector(self.scoreViewTapped(_:)))
                 }
             }
         }.store(in: &cancellable)
@@ -55,5 +57,9 @@ final class DashboardViewController: UIViewController {
     @objc func retryButtonTapped(_ sender: UIButton) {
         sender.isEnabled = false
         viewModel.fetchDashboardData()
+    }
+
+    @objc func scoreViewTapped(_ sender: UIGestureRecognizer) {
+        viewModel.showReport()
     }
 }

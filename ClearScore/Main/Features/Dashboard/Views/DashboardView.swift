@@ -6,6 +6,7 @@ final class DashboardView: UIView {
         static let scoreViewSize: CGFloat = 220
         static let topPadding: CGFloat = 80
     }
+
     private lazy var backgroundImageView: UIImageView = {
         let view = UIImageView(image: UIImage.background)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -69,5 +70,9 @@ final class DashboardView: UIView {
 
     func showRefreshButton(target: Any, selector: Selector) {
         scoreView.showRefreshButton(target: target, selector: selector)
+    }
+
+    func addTapGestureToScoreView(target: Any, selector: Selector){
+        scoreView.addTapGesture(target: target, selector: selector)
     }
 }

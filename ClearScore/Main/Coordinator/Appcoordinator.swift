@@ -12,7 +12,8 @@ struct AppCoordinator: Coordinator {
     }
 
     func start() {
-        let viewModel = DashboardViewModel(api: api)
+        let viewModel = DashboardViewModel(api: api,
+                                           coordinator: self)
         let dashboardVC = DashboardViewController(viewModel: viewModel)
         let reportVC = ReportViewController(viewModel: viewModel)
         if let rootVC = rootViewController as? SlidingTabBarController {
@@ -21,7 +22,8 @@ struct AppCoordinator: Coordinator {
     }
 
     func showReport() {
-        if let rootVC = rootViewController as? SlidingTabBarController {
+        if let rootVC = rootViewController as? SlidingTabBarController, let viewControllers = rootVC.viewControllers {
+            _ = rootVC.tabBarController(rootVC, shouldSelect: viewControllers[1])
             rootVC.selectedIndex = 1
         }
     }
