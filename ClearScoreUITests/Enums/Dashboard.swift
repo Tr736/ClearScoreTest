@@ -2,8 +2,6 @@ import XCTest
 
 internal enum Dashboard {
     static let screen = XCUIApplication().otherElements["DashboardViewController"].firstMatch
-    
-    static let navigationBarTitleIsDashboard = XCUIApplication().navigationBars["DashboardNavViewController"].staticTexts[LocalizedConstants.dashboardTitle].firstMatch
 }
 
 internal enum ScoreView {
@@ -15,4 +13,9 @@ internal enum ScoreView {
     static let titleLabel = XCUIApplication().staticTexts.element(matching: .any, identifier: "titleLabel").firstMatch
     static let subtitleLabel = XCUIApplication().staticTexts.element(matching: .any, identifier: "subtitleLabel").firstMatch
     static let scoreLabel = XCUIApplication().staticTexts.element(matching: .any, identifier: "scoreLabel").firstMatch
+}
+
+internal enum Report {
+    static let screen = XCUIApplication().otherElements["ReportView"].firstMatch
+
 }

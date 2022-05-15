@@ -1,18 +1,34 @@
 import UIKit
+
 struct AppCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
+    var rootViewController: UIViewController
     private var api: APIType
-    init(navigationController: UINavigationController,
+
+    init(rootViewController: UITabBarController,
          api: APIType) {
-        self.navigationController = navigationController
+        self.rootViewController = rootViewController
         self.api = api
     }
 
     func start() {
         let viewModel = DashboardViewModel(api: api)
-        let viewController = DashboardViewController(viewModel: viewModel)
-        navigationController.pushViewController(viewController,
-                                                animated: false)
+        let dashboardVC = DashboardViewController(viewModel: viewModel)
+        let reportVC = ReportViewController(viewModel: viewModel)
+        if let rootVC = rootViewController as? SlidingTabBarController {
+            rootVC.viewControllers = [dashboardVC, reportVC]
+        }
+    }
+
+    func showReport() {
+        if let rootVC = rootViewController as? SlidingTabBarController {
+            rootVC.selectedIndex = 1
+        }
+    }
+
+    func showDashboard() {
+        if let rootVC = rootViewController as? SlidingTabBarController {
+            rootVC.selectedIndex = 0
+        }
     }
 }

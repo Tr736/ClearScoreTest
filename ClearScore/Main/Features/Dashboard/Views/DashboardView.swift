@@ -14,8 +14,8 @@ final class DashboardView: UIView {
     }()
 
     private lazy var scoreView: ScoreView = {
-        let view = ScoreView(title: LocalizedConstants.scoreViewTitle,
-                             subtitle: LocalizedConstants.scoreViewSubTitle)
+        let view = ScoreView(title: .scoreViewTitle,
+                             subtitle: .scoreViewSubTitle)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
         view.layer.cornerRadius = Constants.scoreViewSize / 2

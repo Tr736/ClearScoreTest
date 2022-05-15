@@ -1,9 +1,7 @@
 import UIKit
 import Combine
 final class DashboardViewController: UIViewController {
-    private enum Constants {
-        static let navigationBarAccessibilityLabel = "DashboardNavViewController"
-    }
+
     private let dashboardView = DashboardView()
     private var viewModel: DashboardViewModel
     private var cancellable: [AnyCancellable] = []
@@ -11,6 +9,8 @@ final class DashboardViewController: UIViewController {
     init(viewModel: DashboardViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        title = .dashboardTitle
+        tabBarItem.image = .dashboard
     }
 
     required init?(coder: NSCoder) {
@@ -23,19 +23,12 @@ final class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        observers()
-        prepareViewController()
-        
+        retryObserver()
+        scoreObserver()
         viewModel.fetchDashboardData()
     }
 
-    private func prepareViewController() {
-        navigationController?.navigationBar.accessibilityLabel = Constants.navigationBarAccessibilityLabel
-        title = LocalizedConstants.dashboardTitle
-    }
-
-
-    private func observers() {
+    private func retryObserver() {
         viewModel.shouldRetryFetch.sink { [weak self] shouldRetry in
             guard let self = self else { return }
             if shouldRetry == true {
@@ -46,6 +39,9 @@ final class DashboardViewController: UIViewController {
             }
         }.store(in: &cancellable)
 
+    }
+
+    private func scoreObserver() {
         viewModel.$score.sink { [weak self] score in
             guard let self = self else { return }
             if let score = score {
@@ -57,7 +53,7 @@ final class DashboardViewController: UIViewController {
     }
 
     @objc func retryButtonTapped(_ sender: UIButton) {
-        sender.isEnabled = !sender.isEnabled
+        sender.isEnabled = false
         viewModel.fetchDashboardData()
     }
 }

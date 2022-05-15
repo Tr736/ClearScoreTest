@@ -4,7 +4,13 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private var appCoordinator: AppCoordinator?
-    private let navigationController =  UINavigationController()
+
+    private lazy var rootViewController: SlidingTabBarController = {
+        let viewController = SlidingTabBarController()
+        viewController.tabBar.tintColor = .selectedTintColor
+        viewController.tabBar.unselectedItemTintColor = .darkGray
+        return viewController
+    }()
 
     var window: UIWindow?
     func scene(_ scene: UIScene,
@@ -13,10 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = navigationController
+        window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
         let api = ConcreteAPI(urlSession: URLSession.shared)
-        appCoordinator = AppCoordinator(navigationController: navigationController,
+        appCoordinator = AppCoordinator(rootViewController: rootViewController,
                                     api: api)
         appCoordinator?.start()
     }
